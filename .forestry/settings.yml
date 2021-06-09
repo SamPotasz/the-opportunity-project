@@ -27,11 +27,10 @@ use_front_matter_path: false
 file_template: ":filename:"
 build:
   preview_env:
-  - JEKYLL_ENV=staging
+  - JEKYLL_ENV=production
   preview_output_directory: _site
   install_dependencies_command: bundle install --path vendor/bundle
   preview_docker_image: forestryio/ruby:2.6
   mount_path: "/srv"
   working_dir: "/srv"
-  instant_preview_command: bundle exec jekyll serve --drafts --unpublished --future
-    -d _site
+  instant_preview_command: npm run build
